@@ -1,0 +1,10 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t docker-example -f Dockerfile.dev .
+
+script:
+  - docker run docker-react-app npm run test -- --coverage #-- --coverage is to make react to exit the tests without showing any other prompts further like p, f ,enter etc.
+  
