@@ -6,4 +6,4 @@ before_install:
   - docker build -t docker-example -f Dockerfile.dev .
 
 script:
-  - docker run docker-example npm run test -- --coverage #-- --coverage is to make react to exit the tests without showing any other prompts further like p, f ,enter etc.
+  - docker run -e CI=true docker-example npm run test
