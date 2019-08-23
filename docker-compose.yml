@@ -1,0 +1,11 @@
+version: '3'
+services: 
+  react-app:
+    build: # . says use the Dockerfile in the current folder. But we have Dockerfile.dev
+      context: . #use the current path
+      dockerfile: Dockerfile.dev # from the path from context use the Dockerfile.dev
+    ports: 
+      - "3000:3000"
+    volumes: 
+      - /app/node_modules
+      - .:/app
